@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "538d7c63-1cb0-4168-87df-ef451c7b8402",
+		"name": "API tests",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "basic",
+			"item": [
+				{
+					"name": "Get echo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://{{postman-echo-url}}/get?foo1=bar1&foo2=bar2",
+							"protocol": "https",
+							"host": [
+								"{{postman-echo-url}}"
+							],
+							"path": [
+								"get"
+							],
+							"query": [
+								{
+									"key": "foo1",
+									"value": "bar1"
+								},
+								{
+									"key": "foo2",
+									"value": "bar2"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Post echo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "some raw text to be returned back!"
+						},
+						"url": {
+							"raw": "https://{{postman-echo-url}}/post",
+							"protocol": "https",
+							"host": [
+								"{{postman-echo-url}}"
+							],
+							"path": [
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
